@@ -1,27 +1,23 @@
 <html>
-<title>	
-	OMEN
-</title>
+<title>Data Karyawan</title>
 <body>
-	HALLO INI WEBSITE MANG OMEN
 	
-	
-	
-	<h5>Berikut ini adalah data karyawan yang lulus</h5>
-	<table>
 
-
+	<h1 align="center">Data Karyawan PT. X</h1>
+	
 
 <?php
-$koneksi = mysqli_connect("localhost","root","","karyawan");
-$data = mysqli_query($koneksi,"SELECT * FROM biodata WHERE status = 'lulus'");
+$koneksi = mysqli_connect("localhost","root","","karyawanx");
+$data = mysqli_query($koneksi,"SELECT * FROM biodata");
 ?>
-		<thead>
-		<tr>
-		
-		<th> nomer</th>
-		<th> name</th>
-		<th> no tlp	</th>
+	<table align="center" border="1" width="100">
+	<thead>
+	<tr>
+		<th bgcolor="green">Nomer </th>
+		<th bgcolor="green">Nama</th>
+		<th bgcolor="green">Alalamat</th>
+		<th bgcolor="green">No telepon</th>
+		<th bgcolor="green">Email</th>
 	</tr>
 	</thead>
 
@@ -31,29 +27,18 @@ $data = mysqli_query($koneksi,"SELECT * FROM biodata WHERE status = 'lulus'");
 	?>
 	<tbody>
 	<tr>
-	<td><?php echo $hasil['nik']; ?></td>
-	<td><?php echo $hasil['nama']; ?></td>
-	<td><?php echo $hasil['tlpn']; ?></td>
-		</tr>
+		<td align="center"><?php echo $hasil['nomer']; ?></td>
+		<td><?php echo $hasil['nama']; ?></td>
+		<td><?php echo $hasil['alamat']; ?></td>
+		<td><?php echo $hasil['no_tlpn']; ?></td>
+		<td><?php echo $hasil['email']; ?></td>
+	</tr>
 		<?php }?>
 		</tbody>
 	</table>
 
 <br>
 <br>
-<?php
-
-$angka_pertama = 1;
-$angka_kedua = 2;
-$hasil_angka = $angka_pertama + $angka_kedua;
-
-echo $angka_pertama;
-echo $angka_kedua;
-echo ("<br>berikut adalah hasil angka pertama di tambah angka kedua");
-echo $hasil_angka;
-
-$sifat_anjani = "pemalas";
-echo $sifat_anjani;
 ?>
 </body>
 	
